@@ -5,7 +5,12 @@ import java.util.ArrayList;
 public class AreaCalculator implements Visitor {
     @Override
     public void visit(Building location) {
-
+        ArrayList<Level> levels = location.getLevels();
+        float area = 0;
+        for(Level level:levels){
+            area = area + level.getArea();
+        }
+        location.setArea(area);
     }
 
     @Override
