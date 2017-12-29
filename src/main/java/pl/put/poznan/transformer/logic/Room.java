@@ -1,10 +1,6 @@
 package pl.put.poznan.transformer.logic;
 
 public class Room extends Location implements Visitable{
-    private float area;
-    private float cube;
-    private float heating;
-    private float light;
     private float x;
     private float y;
     private float z;
@@ -33,36 +29,12 @@ public class Room extends Location implements Visitable{
         return z;
     }
 
-    public void setArea(float area) {
-        this.area = area;
-    }
-
-    public void setCube(float cube) {
-        this.cube = cube;
-    }
-
-    public void setHeating(float heating) {
-        this.heating = heating;
-    }
-
-    public void setLight(float light) {
-        this.light = light;
-    }
-
     public int getBulpCount() {
         return bulpCount;
     }
 
     public int getBulpPower() {
         return bulpPower;
-    }
-
-    public float getArea() {
-        return area;
-    }
-
-    public float getCube() {
-        return cube;
     }
 
     @Override
