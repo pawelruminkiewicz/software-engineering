@@ -31,4 +31,8 @@ public abstract class Location {
     public float getCube() {
         return cube;
     }
+
+    public float getLight() {
+        return light;
+    }
 }

@@ -5,9 +5,9 @@ public class Room extends Location implements Visitable{
     private float y;
     private float z;
     private int bulpCount;
-    private int bulpPower;
+    private float bulpPower;
 
-    public Room(int id,String name,float x, float y, float z,int bulpCount,int bulpPower) {
+    public Room(int id,String name,float x, float y, float z,int bulpCount,float bulpPower) {
         this.id = id;
         this.name = name;
         this.x = x;
@@ -33,7 +33,7 @@ public class Room extends Location implements Visitable{
         return bulpCount;
     }
 
-    public int getBulpPower() {
+    public float getBulpPower() {
         return bulpPower;
     }
 
