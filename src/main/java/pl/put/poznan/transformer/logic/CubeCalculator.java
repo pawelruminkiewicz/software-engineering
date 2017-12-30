@@ -5,7 +5,12 @@ import java.util.ArrayList;
 public class CubeCalculator implements Visitor  {
     @Override
     public void visit(Building location) {
-
+        ArrayList<Level> levels = location.getLevels();
+        float cube = 0;
+        for(Level level:levels){
+            cube = cube + level.getCube();
+        }
+        location.setCube(cube);
     }
 
     @Override
