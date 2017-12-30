@@ -6,7 +6,14 @@ public class LightingPowerCalculator implements Visitor {
 
     @Override
     public void visit(Building location) {
-
+        ArrayList<Level> levels = location.getLevels();
+        float sumOfPowers = 0;
+        for(Level lvl: levels){
+            for(Room r: lvl.getRooms()){
+                sumOfPowers += r.getBulpCount() * r.getBulpPower();
+            }
+        }
+        location.setLight(sumOfPowers/location.getArea());
     }
 
     @Override
