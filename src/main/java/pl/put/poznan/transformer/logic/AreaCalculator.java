@@ -2,10 +2,13 @@ package pl.put.poznan.transformer.logic;
 
 import java.util.ArrayList;
 
+/**
+ * Class allows to calculate area of buildings, levels and rooms
+ */
 public class AreaCalculator implements Visitor {
     /**
      * Overloaded method visit for building objects
-     * @param location - building object
+     * @param location building object
      */
     @Override
     public void visit(Building location) {
@@ -19,7 +22,7 @@ public class AreaCalculator implements Visitor {
 
     /**
      * Overloaded method visit for level objects
-     * @param location - level object
+     * @param location level object
      */
     @Override
     public void visit(Level location) {
@@ -33,7 +36,7 @@ public class AreaCalculator implements Visitor {
 
     /**
      * Overloaded method visit for room objects
-     * @param location - room object
+     * @param location room object
      */
     @Override
     public void visit(Room location) {
