@@ -3,6 +3,10 @@ package pl.put.poznan.transformer.logic;
 import java.util.ArrayList;
 
 public class AreaCalculator implements Visitor {
+    /**
+     * Overloaded method visit for building objects
+     * @param location - building object
+     */
     @Override
     public void visit(Building location) {
         ArrayList<Level> levels = location.getLevels();
@@ -13,6 +17,10 @@ public class AreaCalculator implements Visitor {
         location.setArea(area);
     }
 
+    /**
+     * Overloaded method visit for level objects
+     * @param location - level object
+     */
     @Override
     public void visit(Level location) {
         ArrayList<Room> rooms = location.getRooms();
@@ -23,6 +31,10 @@ public class AreaCalculator implements Visitor {
         location.setArea(area);
     }
 
+    /**
+     * Overloaded method visit for room objects
+     * @param location - room object
+     */
     @Override
     public void visit(Room location) {
         float x = location.getX();
