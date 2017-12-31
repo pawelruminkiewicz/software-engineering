@@ -9,11 +9,27 @@
 	
 </head>
 <body>
-   DODAWANIE POZIOMU
+	<h1>Building Info</h1>
+	<h2>DODAWANIE POZIOMU</h2>
     <a href="/">Back</a>
 	<a href="/addbuilding">Add building</a>
 	<a href="/addlevel">Add level</a>
 	<a href="/addroom">Add room</a>
+	<form>
+		<h3>Wybierz budynek:</h3>
+		<select>
+			<!-- tutaj dynamicznie generowac HTML z danych serwera -->
+			<option value="x">Nazwa budynku 1</option>
+			<option value="y">Nazwa budynku 2</option>
+			<option value="z">Nazwa budynku 3</option>
+		</select>
+		<h3>ID poziomu:</h3>
+		<input type="text" name="level-id" class="field">
+		<h3>Nazwa poziomu:</h3>
+		<input type="text" name="level-name" class="field">
+		<br>
+		<input type="submit" id="send" value="Dodaj">
+	</form>
 
 </body>
 </html>

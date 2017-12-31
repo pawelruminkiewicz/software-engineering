@@ -9,11 +9,43 @@
 	
 </head>
 <body>
-   DODAWANIE POMIESZCZENIA
-   <a href="/">Back</a>
-   <a href="/addbuilding">Add building</a>
-   <a href="/addlevel">Add level</a>
-   <a href="/addroom">Add room</a>
-
+    <h1>Building Info</h1>
+    <h2>DODAWANIE POMIESZCZENIA</h2>
+    <a href="/">Back</a>
+    <a href="/addbuilding">Add building</a>
+    <a href="/addlevel">Add level</a>
+    <a href="/addroom">Add room</a>
+    <form>
+        <h3>Wybierz budynek:</h3>
+        <select>
+            <!-- tutaj dynamicznie generowac HTML z danych serwera -->
+            <option value="x">Nazwa budynku 1</option>
+            <option value="y">Nazwa budynku 2</option>
+            <option value="z">Nazwa budynku 3</option>
+        </select>
+        <h3>Wybierz pietro:</h3>
+        <select>
+            <!-- tutaj dynamicznie generowac HTML z danych serwera -->
+            <option value="a">Nazwa pietra 1</option>
+            <option value="b">Nazwa pietra 2</option>
+            <option value="c">Nazwa pietra 3</option>
+        </select>
+        <h3>ID pomieszczenia:</h3>
+        <input type="text" name="room-id" class="field">
+        <h3>Nazwa pomieszczenia:</h3>
+        <input type="text" name="room-name" class="field">
+        <h3>Dlugosc (x):</h3>
+        <input type="text" name="room-x" class="field">
+        <h3>Szerokosc (y):</h3>
+        <input type="text" name="room-y" class="field">
+        <h3>Wysokosc (z):</h3>
+        <input type="text" name="room-z" class="field">
+        <h3>Liczba zarowek:</h3>
+        <input type="text" name="room-bulp-count" class="field">
+        <h3>Moc zarowek:</h3>
+        <input type="text" name="room-bulp-power" class="field">
+        <br>
+        <input type="submit" id="send" value="Dodaj">
+    </form>
 </body>
 </html>
