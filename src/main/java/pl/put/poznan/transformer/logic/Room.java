@@ -4,17 +4,17 @@ public class Room extends Location implements Visitable{
     private float x;
     private float y;
     private float z;
-    private int bulpCount;
-    private float bulpPower;
+    private int bulbCount;
+    private float bulbPower;
 
-    public Room(int id,String name,float x, float y, float z,int bulpCount,float bulpPower) {
+    public Room(int id, String name, float x, float y, float z, int bulbCount, float bulbPower) {
         this.id = id;
         this.name = name;
         this.x = x;
         this.y = y;
         this.z = z;
-        this.bulpCount = bulpCount;
-        this.bulpPower = bulpPower;
+        this.bulbCount = bulbCount;
+        this.bulbPower = bulbPower;
     }
 
     public float getX() {
@@ -29,12 +29,12 @@ public class Room extends Location implements Visitable{
         return z;
     }
 
-    public int getBulpCount() {
-        return bulpCount;
+    public int getBulbCount() {
+        return bulbCount;
     }
 
-    public float getBulpPower() {
-        return bulpPower;
+    public float getBulbPower() {
+        return bulbPower;
     }
 
     @Override

@@ -10,17 +10,17 @@ import static org.junit.Assert.*;
 
 public class AreaCalculatorTest {
 
-    AreaCalculator areaCalculator;
-    Room room11;
-    Room room12;
-    Room room21;
-    Room room22;
-    Level level1;
-    Level level2;
-    Building building;
-    ArrayList<Room> rooms1;
-    ArrayList<Room> rooms2;
-    ArrayList<Level> levels;
+    private AreaCalculator areaCalculator;
+    private Room room11;
+    private Room room12;
+    private Room room21;
+    private Room room22;
+    private Level level1;
+    private Level level2;
+    private Building building;
+    private ArrayList<Room> rooms1;
+    private ArrayList<Room> rooms2;
+    private ArrayList<Level> levels;
 
     @Before
     public void setUp() throws Exception {

@@ -10,7 +10,7 @@ public class LightingPowerCalculator implements Visitor {
         float sumOfPowers = 0;
         for(Level lvl: levels){
             for(Room r: lvl.getRooms()){
-                sumOfPowers += r.getBulpCount() * r.getBulpPower();
+                sumOfPowers += r.getBulbCount() * r.getBulbPower();
             }
         }
         location.setLight(sumOfPowers/location.getArea());
@@ -21,16 +21,16 @@ public class LightingPowerCalculator implements Visitor {
         ArrayList <Room> rooms = location.getRooms();
         float sumOfPowers = 0;
         for(Room room: rooms){
-            sumOfPowers += room.getBulpPower() * room.getBulpCount();
+            sumOfPowers += room.getBulbPower() * room.getBulbCount();
         }
         location.setLight(sumOfPowers/location.getArea());
     }
 
     @Override
     public void visit(Room location) {
-        int bulpCount = location.getBulpCount();
+        int bulpCount = location.getBulbCount();
         float area = location.getArea();
-        float bulpPower = location.getBulpPower();
+        float bulpPower = location.getBulbPower();
         location.setLight((bulpPower * bulpCount) / area);
     }
 }
