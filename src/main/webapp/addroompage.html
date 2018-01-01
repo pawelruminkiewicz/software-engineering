@@ -4,27 +4,30 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Building Info</title>
-	<!-- <link rel="Stylesheet" type="text/css" href="css/style.css" /> -->
+    <link rel="Stylesheet" type="text/css" href="css/style.css" />
 	
 	
 </head>
 <body>
     <h1>Building Info</h1>
+
+    <div id="navigation">
+        <a href="/" class="button">Back</a>
+        <a href="/addbuilding" class="button">Add building</a>
+        <a href="/addlevel" class="button">Add level</a>
+        <a href="/addroom" class="button selected">Add room</a>
+    </div>
     <h2>DODAWANIE POMIESZCZENIA</h2>
-    <a href="/">Back</a>
-    <a href="/addbuilding">Add building</a>
-    <a href="/addlevel">Add level</a>
-    <a href="/addroom">Add room</a>
-    <form>
+    <form id="myform">
         <h3>Wybierz budynek:</h3>
-        <select>
+        <select class="field">
             <!-- tutaj dynamicznie generowac HTML z danych serwera -->
             <option value="x">Nazwa budynku 1</option>
             <option value="y">Nazwa budynku 2</option>
             <option value="z">Nazwa budynku 3</option>
         </select>
         <h3>Wybierz pietro:</h3>
-        <select>
+        <select class="field">
             <!-- tutaj dynamicznie generowac HTML z danych serwera -->
             <option value="a">Nazwa pietra 1</option>
             <option value="b">Nazwa pietra 2</option>
@@ -47,5 +50,6 @@
         <br>
         <input type="submit" id="send" value="Dodaj">
     </form>
+    <script src=”js/javascript.js”></script>
 </body>
 </html>

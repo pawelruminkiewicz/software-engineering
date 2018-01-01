@@ -1,0 +1,69 @@
+h1 {
+    text-align: center;
+    border: 3px solid black;
+    width: 65%;
+    margin: auto;
+    box-shadow: 5px 10px 3px black;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    font-size: 300%;
+}
+
+html {
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0px;
+}
+body {
+    background: -webkit-linear-gradient(#99ff33,yellow); /* Safari 5.1-6.0 */
+    background: -o-linear-gradient(#99ff33,yellow); /* Opera 11.1-12.0 */
+    background: -moz-linear-gradient(#99ff33,yellow); /* Firefox 3.6-15 */
+    background: linear-gradient(#99ff33,yellow); /* Standard syntax */
+    /*overflow-y: hidden;*/
+}
+
+.button {
+    padding: 15px 10px;
+    background-color: red;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    display: inline-block;
+    width: 120px;
+}
+
+.button:hover, #send:hover {
+    background-color: #ff4d4d;
+}
+#send {
+    background-color: red;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    width: 60%;
+    margin: 40px;
+    padding: 15px 10px;
+    border: none;
+    cursor: pointer;
+}
+#navigation {
+    text-align: center;
+}
+
+a, #send {
+    font-size: 120%;
+}
+.selected {
+    border: 4px solid black;
+}
+
+#myform {
+    margin: auto;
+    text-align: center;
+    border: 3px solid black;
+    width: 40%;
+}
+
+.field {
+    width: 20%;
+}
