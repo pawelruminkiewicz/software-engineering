@@ -12,12 +12,11 @@ public class Building extends Location implements Visitable{
      * Constructor of the class
      * @param id id of the building
      * @param name name of the building
-     * @param levels array of levels, that are in the building
      */
-    public Building(int id,String name,ArrayList<Level> levels) {
-        this.levels = levels;
+    public Building(int id,String name) {
         this.id = id;
         this.name = name;
+        levels = new ArrayList<>();
     }
 
     public ArrayList<Level> getLevels() {
