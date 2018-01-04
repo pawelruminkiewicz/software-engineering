@@ -20,6 +20,12 @@ public class TextTransformerController {
         return "hellopage";
     }
 
+    @RequestMapping(value="/", method=RequestMethod.GET)
+    public String startpage(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+        //model.addAttribute("name", name);
+        return "index";
+    }
+
     @RequestMapping(value="/addbuilding", method=RequestMethod.GET)
     public String addbuilding(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
         //model.addAttribute("name", name);

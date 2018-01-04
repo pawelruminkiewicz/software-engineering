@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Building Info</title>
-	<link rel="Stylesheet" type="text/css" href="css/style.css" />
+	<link rel="Stylesheet" type="text/css" href="../css/style.css" />
 	
 	
 </head>
