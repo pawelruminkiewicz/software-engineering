@@ -3,10 +3,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.transformer.logic.*;
-import pl.put.poznan.transformer.logic.TextTransformer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import java.util.Arrays;
 import java.util.ArrayList;
 
 @Controller
@@ -66,20 +64,19 @@ public class TextTransformerController {
 
     @RequestMapping(value="/addbuilding", method=RequestMethod.GET)
     public String addbuilding(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
-        model.addAttribute("myBuildingsList", myBuildings);
+        model.addAttribute("myBuildingList", myBuildings);
         return "addbuildingpage";
     }
 
     @RequestMapping("/addlevel")
     public String addlevel(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
-        model.addAttribute("myBuildingsList", myBuildings);
-        //model.addAttribute("myLevelsList", myBuildings);
+        model.addAttribute("myBuildingList", myBuildings);
         return "addlevelpage";
     }
 
     @RequestMapping("/addroom")
     public String addroom(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
-        //model.addAttribute("name", name);
+        model.addAttribute("myBuildingList", myBuildings);
         return "addroompage";
     }
     /*

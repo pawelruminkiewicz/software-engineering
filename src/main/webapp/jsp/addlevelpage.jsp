@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 
 <html lang="pl">
@@ -20,16 +21,14 @@
 	<h2>DODAWANIE POZIOMU</h2>
 	<form id="myform">
 		<h3>Wybierz budynek:</h3>
-		<select class="field">
-			<!-- tutaj dynamicznie generowac HTML z danych serwera -->
-			<option value="x">Nazwa budynku 1</option>
-			<option value="y">Nazwa budynku 2</option>
-			<option value="z">Nazwa budynku 3</option>
+		<select name="building" class="field">
 			<c:forEach items="${myBuildingList}" var="building">
 				<option value="${building.getId()}">#${building.getId()} ${building.getName()}</option>
 			</c:forEach >
+			<option value="1" ${item.quantity == 1 ? "selected" : ""}>1</option>
 
 		</select>
+
 
 		<h3>ID poziomu:</h3>
 		<input type="text" name="level-id" class="field">
@@ -38,6 +37,6 @@
 		<br>
 		<input type="submit" id="send" value="Dodaj">
 	</form>
-	<script src=”js/javascript.js”></script>
+	<script src="../js/javascript.js"></script>
 </body>
 </html>

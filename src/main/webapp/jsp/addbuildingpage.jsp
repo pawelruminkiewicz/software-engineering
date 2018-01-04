@@ -1,3 +1,7 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="pl.put.poznan.transformer.logic.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 
 <html lang="pl">
@@ -26,6 +30,6 @@
         <br>
         <input type="submit" id="send" value="Dodaj">
     </form>
-    <script src=”js/javascript.js”></script>
+    <script src="../js/javascript.js"></script>
 </body>
 </html>

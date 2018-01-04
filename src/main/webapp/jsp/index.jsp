@@ -1,7 +1,5 @@
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="pl.put.poznan.transformer.logic.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!doctype html>
 
 <html lang="pl">
@@ -30,8 +28,6 @@
 			</c:forEach >
 		</div>
 	</c:forEach >
-
-
-	<script src=”js/javascript.js”></script>
+	<script src="../js/javascript.js"></script>
 </body>
 </html>
