@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 
 <html lang="pl">
@@ -24,7 +25,12 @@
 			<option value="x">Nazwa budynku 1</option>
 			<option value="y">Nazwa budynku 2</option>
 			<option value="z">Nazwa budynku 3</option>
+			<c:forEach items="${myBuildingList}" var="building">
+				<option value="${building.getId()}">#${building.getId()} ${building.getName()}</option>
+			</c:forEach >
+
 		</select>
+
 		<h3>ID poziomu:</h3>
 		<input type="text" name="level-id" class="field">
 		<h3>Nazwa poziomu:</h3>

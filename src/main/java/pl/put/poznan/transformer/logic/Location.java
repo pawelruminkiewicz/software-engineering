@@ -35,4 +35,12 @@ public abstract class Location {
     public float getLight() {
         return light;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
 }

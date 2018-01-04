@@ -48,6 +48,7 @@ body {
 }
 #navigation {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 a, #send {
@@ -66,4 +67,22 @@ a, #send {
 
 .field {
     width: 20%;
+}
+
+.div-building {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-level {
+    font-size: 25px;
+}
+
+.div-room {
+    font-size: 20px;
 }

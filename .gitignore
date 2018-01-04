@@ -26,3 +26,9 @@ hs_err_pid*
 
 # tasks
 /.idea/tasks.xml
+
+# targets
+/target
+
+# name
+/.idea/.name
