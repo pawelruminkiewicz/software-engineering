@@ -86,3 +86,13 @@ a, #send {
 .div-room {
     font-size: 20px;
 }
+
+#complete {
+    padding: 20px;
+    background-color: greenyellow;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+}

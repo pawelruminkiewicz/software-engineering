@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Level extends Location implements Visitable{
     private ArrayList<Room> rooms;
 
-    public Level(int id,String name,Building building) {
+    public Level(int id, String name, Building building) {
         this.id = id;
         this.name = name;
         building.getLevels().add(this);

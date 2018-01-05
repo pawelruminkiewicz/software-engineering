@@ -13,7 +13,7 @@ public class Building extends Location implements Visitable{
      * @param id id of the building
      * @param name name of the building
      */
-    public Building(int id,String name) {
+    public Building(int id, String name) {
         this.id = id;
         this.name = name;
         levels = new ArrayList<>();

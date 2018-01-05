@@ -1,3 +1,5 @@
+<%@ page import="pl.put.poznan.transformer.logic.*" %>
+<%@ page import="pl.put.poznan.transformer.rest.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
@@ -19,17 +21,14 @@
 		<a href="/addroom" class="button">Add room</a>
 	</div>
 	<h2>DODAWANIE POZIOMU</h2>
-	<form id="myform">
+	<form id="myform" method="POST">
 		<h3>Wybierz budynek:</h3>
-		<select name="building" class="field">
+		<select name="building-id" class="field">
 			<c:forEach items="${myBuildingList}" var="building">
 				<option value="${building.getId()}">#${building.getId()} ${building.getName()}</option>
 			</c:forEach >
-			<option value="1" ${item.quantity == 1 ? "selected" : ""}>1</option>
 
 		</select>
-
-
 		<h3>ID poziomu:</h3>
 		<input type="text" name="level-id" class="field">
 		<h3>Nazwa poziomu:</h3>
@@ -37,6 +36,17 @@
 		<br>
 		<input type="submit" id="send" value="Dodaj">
 	</form>
+
+	<% if (request.getParameter("building-id") != null){
+		int buildingId=Integer.parseInt(request.getParameter("building-id"));
+		int levelId=Integer.parseInt(request.getParameter("level-id"));
+		String levelName=request.getParameter("level-name");
+		System.out.println("Poziom wprowadzony poprawnie");
+		new Level(levelId, levelName, TextTransformerController.findBuildingById(buildingId)); %>
+	<h2 id="complete"> Dodano poprawnie </h2>
+	<%} %>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="../js/javascript.js"></script>
 </body>
 </html>

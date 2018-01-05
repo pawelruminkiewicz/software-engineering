@@ -7,7 +7,7 @@ public class Room extends Location implements Visitable{
     private int bulbCount;
     private float bulbPower;
 
-    public Room(int id, String name, float x, float y, float z, int bulbCount, float bulbPower,Level level) {
+    public Room(int id, String name, float x, float y, float z, int bulbCount, float bulbPower, Level level) {
         this.id = id;
         this.name = name;
         this.x = x;

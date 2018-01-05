@@ -12,6 +12,30 @@ import java.util.ArrayList;
 public class TextTransformerController {
     private static ArrayList<Building> myBuildings = new ArrayList<Building>();
 
+    public static void addToMyList(Building myBuilding) {
+        myBuildings.add(myBuilding);
+    }
+
+    public static Building findBuildingById(int id) {
+        for(int i = 0; i<myBuildings.size(); i++) {
+            if (myBuildings.get(i).getId() == id) {
+                return myBuildings.get(i);
+            }
+        }
+        return null;
+    }
+
+    public static Level findLevelById(int id) {
+        for(int i = 0; i<myBuildings.size(); i++) {
+            for(int k = 0; k < myBuildings.get(i).getLevels().size(); k++) {
+                if (myBuildings.get(i).getLevels().get(k).getId() == id) {
+                    return myBuildings.get(i).getLevels().get(k);
+                }
+            }
+        }
+        return null;
+    }
+
     static {
         Building myBuilding = new Building(1, "White House");
         Level myLevel = new Level(3, "First Level", myBuilding);
@@ -50,32 +74,58 @@ public class TextTransformerController {
         return "register";
     }
 
-    @RequestMapping(value="/insert", method=RequestMethod.GET)
+    @RequestMapping(value="/insert", method=RequestMethod.POST)
     public String hellos(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
         //model.addAttribute("name", name);
+        System.out.println("tutaj");
         return "insert";
     }
 
+
     @RequestMapping(value="/", method=RequestMethod.GET)
-    public String startpage(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+    public String startPage(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
         model.addAttribute("myBuildingList", myBuildings);
         return "index";
     }
 
+
+
     @RequestMapping(value="/addbuilding", method=RequestMethod.GET)
-    public String addbuilding(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+    public String addBuilding(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
         model.addAttribute("myBuildingList", myBuildings);
         return "addbuildingpage";
     }
 
-    @RequestMapping("/addlevel")
-    public String addlevel(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+    @RequestMapping(value="/addbuilding", method=RequestMethod.POST)
+    public String addBuildingCreate(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+        model.addAttribute("myBuildingList", myBuildings);
+        return "addbuildingpage";
+    }
+
+
+
+    @RequestMapping(value="/addlevel", method=RequestMethod.GET)
+    public String addLevel(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
         model.addAttribute("myBuildingList", myBuildings);
         return "addlevelpage";
     }
 
-    @RequestMapping("/addroom")
-    public String addroom(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+    @RequestMapping(value="/addlevel", method=RequestMethod.POST)
+    public String addLevelCreate(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+        model.addAttribute("myBuildingList", myBuildings);
+        return "addlevelpage";
+    }
+
+
+
+    @RequestMapping(value="/addroom", method=RequestMethod.GET)
+    public String addRoom(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+        model.addAttribute("myBuildingList", myBuildings);
+        return "addroompage";
+    }
+
+    @RequestMapping(value="/addroom", method=RequestMethod.POST)
+    public String addRoomCreate(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
         model.addAttribute("myBuildingList", myBuildings);
         return "addroompage";
     }
