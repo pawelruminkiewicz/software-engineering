@@ -17,17 +17,25 @@
 		<a href="/addlevel" class="button">Add level</a>
 		<a href="/addroom" class="button">Add room</a>
 	</div>
-	<c:forEach items="${myBuildingList}" var="building">
-		<div class="div-building">#${building.getId()} ${building.getName()}
-			<c:forEach items="${building.getLevels()}" var="level">
-				<div class="div-level">#${level.getId()} ${level.getName()}
-					<c:forEach items="${level.getRooms()}" var="room">
-						<div class="div-room">#${room.getId()} ${room.getName()}</div>
-					</c:forEach >
-				</div>
-			</c:forEach >
+	<div class="div-table">
+		<div class="div-row">
+			<div class="div-header">Location</div>
+			<div class="div-header">Area</div>
+			<div class="div-header">Cube</div>
+			<div class="div-header">Light</div>
 		</div>
-	</c:forEach >
+		<c:forEach items="${myBuildingList}" var="building">
+			<div class="div-building"> <div class="row"> <div class="div-data">#${building.getId()} ${building.getName()} </div> <div class="div-data"> ${building.getArea()} </div> <div class="div-data"> ${building.getCube()} </div> <div class="div-data"> ${building.getLight()} </div> </div>
+				<c:forEach items="${building.getLevels()}" var="level">
+					<div class="div-level"> <div class="row"> <div class="div-data"> #${level.getId()} ${level.getName()} </div> <div class="div-data"> ${level.getArea()} </div> <div class="div-data"> ${level.getCube()} </div> <div class="div-data"> ${level.getLight()} </div> </div>
+						<c:forEach items="${level.getRooms()}" var="room">
+							<div class="div-room"> <div class="row"></div> <div class="div-data">#${room.getId()} ${room.getName()} </div> <div class="div-data"> ${room.getArea()} </div> <div class="div-data"> ${room.getCube()} </div> <div class="div-data"> ${room.getLight()}</div> </div>
+						</c:forEach >
+					</div>
+				</c:forEach >
+			</div>
+		</c:forEach >
+	</div>
 	<script src="../js/javascript.js"></script>
 </body>
 </html>

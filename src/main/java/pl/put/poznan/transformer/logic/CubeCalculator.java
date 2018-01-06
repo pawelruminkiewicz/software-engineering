@@ -41,8 +41,10 @@ public class CubeCalculator implements Visitor  {
      */
     @Override
     public void visit(Room location) {
+        float x = location.getX();
+        float y = location.getY();
         float z = location.getZ();
-        float cube = location.getArea()*z;
+        float cube = x*y*z;
         location.setCube(cube);
     }
 }

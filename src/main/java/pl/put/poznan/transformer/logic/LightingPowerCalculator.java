@@ -28,9 +28,9 @@ public class LightingPowerCalculator implements Visitor {
 
     @Override
     public void visit(Room location) {
-        int bulpCount = location.getBulbCount();
+        int bulbCount = location.getBulbCount();
         float area = location.getArea();
-        float bulpPower = location.getBulbPower();
-        location.setLight((bulpPower * bulpCount) / area);
+        float bulbPower = location.getBulbPower();
+        location.setLight((bulbPower * bulbCount) / area);
     }
 }

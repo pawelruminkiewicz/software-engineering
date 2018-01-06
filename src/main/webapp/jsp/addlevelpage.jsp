@@ -1,5 +1,6 @@
 <%@ page import="pl.put.poznan.transformer.logic.*" %>
 <%@ page import="pl.put.poznan.transformer.rest.*"%>
+<%@ page import="pl.put.poznan.transformer.app.TextTransformerApplication" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
@@ -29,7 +30,7 @@
 		<h3>Level ID:</h3>
 		<input type="text" name="level-id" class="field" pattern="\d*" title="Cyfry" required>
 		<h3>Level name:</h3>
-		<input type="text" name="level-name" class="field" pattern="[a-zA-Z]*" title="Litery" required>
+		<input type="text" name="level-name" class="field" pattern="[a-zA-Z\s]*" title="Litery" required>
 		<br>
 		<input type="submit" id="send" value="Add">
 	</form>
@@ -39,7 +40,7 @@
 		int levelId=Integer.parseInt(request.getParameter("level-id"));
 		String levelName=request.getParameter("level-name");
 		System.out.println("Level inserted correctly");
-		new Level(levelId, levelName, TextTransformerController.findBuildingById(buildingId)); %>
+		new Level(levelId, levelName, TextTransformerApplication.findBuildingById(buildingId)); %>
 	<h2 id="complete"> Added correctly </h2>
 	<%} %>
 

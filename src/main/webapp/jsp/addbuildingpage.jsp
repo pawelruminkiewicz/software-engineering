@@ -1,6 +1,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="pl.put.poznan.transformer.logic.*" %>
 <%@ page import="pl.put.poznan.transformer.rest.*"%>
+<%@ page import="pl.put.poznan.transformer.app.TextTransformerApplication" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
@@ -24,7 +25,7 @@
         <h3>Building ID:</h3>
         <input type="text" name="building-id" class="field" pattern="\d*" title="Cyfry" required>
         <h3>Building name:</h3>
-        <input type="text" name="building-name" class="field" pattern="[a-zA-Z]*" title="Litery" required>
+        <input type="text" name="building-name" class="field" pattern="[a-zA-Z\s]*" title="Litery" required>
         <br>
         <input type="submit" id="send" value="Add">
     </form>
@@ -32,7 +33,7 @@
     <% if (request.getParameter("building-name") != null){
         String buildingName=request.getParameter("building-name");
         int buildingId=Integer.parseInt(request.getParameter("building-id"));
-        TextTransformerController.addToMyList(new Building(buildingId, buildingName));
+        TextTransformerApplication.addToMyList(new Building(buildingId, buildingName));
         System.out.println("Building inserted correctly"); %>
     <h2 id="complete"> Added correctly </h2>
     <%} %>

@@ -1,5 +1,6 @@
 <%@ page import="pl.put.poznan.transformer.logic.*" %>
 <%@ page import="pl.put.poznan.transformer.rest.*"%>
+<%@ page import="pl.put.poznan.transformer.app.TextTransformerApplication" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!doctype html>
@@ -33,7 +34,7 @@
         <h3>Room ID:</h3>
         <input type="text" name="room-id" class="field" pattern="\d*" title="Cyfry" required>
         <h3>Room name:</h3>
-        <input type="text" name="room-name" class="field" pattern="[a-zA-Z]*" title="Litery" required>
+        <input type="text" name="room-name" class="field" pattern="[a-zA-Z\s]*" title="Litery" required>
         <h3>Length (x):</h3>
         <input type="text" name="room-x" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
         <h3>Width (y):</h3>
@@ -57,7 +58,12 @@
         float z=Float.parseFloat(request.getParameter("room-z").replace(',','.'));
         int bulbCount=Integer.parseInt(request.getParameter("room-bulb-count"));
         float bulbPower=Float.parseFloat(request.getParameter("room-bulb-power").replace(',','.'));
-        new Room(roomId, roomName, x, y, z, bulbCount, bulbPower, TextTransformerController.findLevelById(levelId));
+        Level myLevel = TextTransformerApplication.findLevelById(levelId);
+        Room myRoom = new Room(roomId, roomName, x, y, z, bulbCount, bulbPower, myLevel);
+        Building myBuilding = TextTransformerApplication.findBuildingByLevelId(myLevel.getId());
+        TextTransformerApplication.calculateAllAttributes(myRoom);
+        TextTransformerApplication.calculateAllAttributes(myLevel);
+        TextTransformerApplication.calculateAllAttributes(myBuilding);
         System.out.println("Room inserted correctly"); %>
     <h2 id="complete"> Added correctly </h2>
     <%} %>
