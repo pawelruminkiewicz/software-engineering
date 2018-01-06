@@ -47,7 +47,7 @@
         <h3>Bulb power:</h3>
         <input type="text" name="room-bulb-power" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
         <br>
-        <input type="submit" id="send" value="Dodaj">
+        <input type="submit" id="send" value="Add">
     </form>
 
     <% if (request.getParameter("level-id") != null){
@@ -60,8 +60,8 @@
         int bulbCount=Integer.parseInt(request.getParameter("room-bulb-count"));
         float bulbPower=Float.parseFloat(request.getParameter("room-bulb-power").replace(',','.'));
         new Room(roomId, roomName, x, y, z, bulbCount, bulbPower, TextTransformerController.findLevelById(levelId));
-        System.out.println("Pomieszczenie wprowadzone poprawnie"); %>
-    <h2 id="complete"> Dodano poprawnie </h2>
+        System.out.println("Room inserted correctly"); %>
+    <h2 id="complete"> Added correctly </h2>
     <%} %>
 
     <script src="../js/jquery-3.2.1.min.js"></script>
