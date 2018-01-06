@@ -9,8 +9,6 @@
 	<meta charset="utf-8" />
 	<title>Building Info</title>
     <link rel="Stylesheet" type="text/css" href="../css/style.css" />
-
-	
 </head>
 <body>
     <h1>Building Info</h1>
@@ -64,7 +62,7 @@
     <h2 id="complete"> Added correctly </h2>
     <%} %>
 
-    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../js/javascript.js"></script>
 </body>
 </html>
