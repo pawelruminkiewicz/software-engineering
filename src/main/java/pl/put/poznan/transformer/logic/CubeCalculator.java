@@ -18,7 +18,7 @@ public class CubeCalculator implements Visitor  {
         for(Level level:levels){
             cube = cube + level.getCube();
         }
-        location.setCube(cube);
+        location.setCube(Float.parseFloat((String.format("%.2f",cube)).replace(',','.')));
     }
 
     /**
@@ -32,7 +32,7 @@ public class CubeCalculator implements Visitor  {
         for(Room room:rooms){
             cube = cube + room.getCube();
         }
-        location.setCube(cube);
+        location.setCube(Float.parseFloat((String.format("%.2f",cube)).replace(',','.')));
     }
 
     /**
@@ -45,6 +45,6 @@ public class CubeCalculator implements Visitor  {
         float y = location.getY();
         float z = location.getZ();
         float cube = x*y*z;
-        location.setCube(cube);
+        location.setCube(Float.parseFloat((String.format("%.2f",cube)).replace(',','.')));
     }
 }

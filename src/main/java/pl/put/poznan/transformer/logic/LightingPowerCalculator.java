@@ -6,6 +6,7 @@ public class LightingPowerCalculator implements Visitor {
 
     @Override
     public void visit(Building location) {
+        float light;
         ArrayList<Level> levels = location.getLevels();
         float sumOfPowers = 0;
         for(Level lvl: levels){
@@ -13,24 +14,28 @@ public class LightingPowerCalculator implements Visitor {
                 sumOfPowers += r.getBulbCount() * r.getBulbPower();
             }
         }
-        location.setLight(sumOfPowers/location.getArea());
+        light = (sumOfPowers/location.getArea());
+        location.setLight(Float.parseFloat((String.format("%.2f",light)).replace(',','.')));
     }
-
     @Override
     public void visit(Level location) {
+        float light;
         ArrayList <Room> rooms = location.getRooms();
         float sumOfPowers = 0;
         for(Room room: rooms){
             sumOfPowers += room.getBulbPower() * room.getBulbCount();
         }
-        location.setLight(sumOfPowers/location.getArea());
+        light = sumOfPowers/location.getArea();
+        location.setLight(Float.parseFloat((String.format("%.2f",light)).replace(',','.')));
     }
 
     @Override
     public void visit(Room location) {
+        float light;
         int bulbCount = location.getBulbCount();
         float area = location.getArea();
         float bulbPower = location.getBulbPower();
-        location.setLight((bulbPower * bulbCount) / area);
+        light = (bulbPower * bulbCount) / area;
+        location.setLight(Float.parseFloat((String.format("%.2f",light)).replace(',','.')));
     }
 }

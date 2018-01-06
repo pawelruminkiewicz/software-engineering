@@ -17,7 +17,7 @@ public class AreaCalculator implements Visitor {
         for(Level level:levels){
             area = area + level.getArea();
         }
-        location.setArea(area);
+        location.setArea(Float.parseFloat((String.format("%.2f",area)).replace(',','.')));
     }
 
     /**
@@ -31,7 +31,7 @@ public class AreaCalculator implements Visitor {
         for(Room room:rooms){
             area = area + room.getArea();
         }
-        location.setArea(area);
+        location.setArea(Float.parseFloat((String.format("%.2f",area)).replace(',','.')));
     }
 
     /**
@@ -43,6 +43,6 @@ public class AreaCalculator implements Visitor {
         float x = location.getX();
         float y = location.getY();
         float area = x*y;
-        location.setArea(area);
+        location.setArea(Float.parseFloat((String.format("%.2f",area)).replace(',','.')));
     }
 }
