@@ -20,34 +20,31 @@
         <a href="/addlevel" class="button">Add level</a>
         <a href="/addroom" class="button selected">Add room</a>
     </div>
-    <h2>DODAWANIE POMIESZCZENIA</h2>
+    <h2>Adding a room</h2>
     <form id="myform" method="POST">
-        <h3>Wybierz budynek:</h3>
-        <select name="building-id"class="field">
-            <c:forEach items="${myBuildingList}" var="building">
-                <option value="${building.getId()}">#${building.getId()} ${building.getName()} </option>
-            </c:forEach >
-        </select>
-        <h3>Wybierz pietro:</h3>
+        <h3>Select level:</h3>
         <select  name="level-id" class="field">
-            <!-- TO DO: trzeba wybierac to, co zaznaczone wyzej -->
-            <c:forEach items="${myBuildingList.get(0).getLevels()}" var="level">
-                <option value="${level.getId()}">#${level.getId()} ${level.getName()}</option>
+            <c:forEach items="${myBuildingList}" var="building">
+                <optgroup label="#${building.getId()} ${building.getName()} ">
+                    <c:forEach items="${building.getLevels()}" var="level">
+                        <option value="${level.getId()}">#${level.getId()} ${level.getName()}</option>
+                    </c:forEach >
+                </optgroup>
             </c:forEach >
         </select>
-        <h3>ID pomieszczenia:</h3>
+        <h3>Room ID:</h3>
         <input type="text" name="room-id" class="field" pattern="\d*" title="Cyfry" required>
-        <h3>Nazwa pomieszczenia:</h3>
+        <h3>Room name:</h3>
         <input type="text" name="room-name" class="field" pattern="[a-zA-Z]*" title="Litery" required>
-        <h3>Dlugosc (x):</h3>
+        <h3>Length (x):</h3>
         <input type="text" name="room-x" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
-        <h3>Szerokosc (y):</h3>
+        <h3>Width (y):</h3>
         <input type="text" name="room-y" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
-        <h3>Wysokosc (z):</h3>
+        <h3>Height (z):</h3>
         <input type="text" name="room-z" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
-        <h3>Liczba zarowek:</h3>
+        <h3>Bulb count:</h3>
         <input type="text" name="room-bulb-count" class="field" pattern="\d*" title="Cyfry" required>
-        <h3>Moc zarowek:</h3>
+        <h3>Bulb power:</h3>
         <input type="text" name="room-bulb-power" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
         <br>
         <input type="submit" id="send" value="Dodaj">
@@ -67,7 +64,7 @@
     <h2 id="complete"> Dodano poprawnie </h2>
     <%} %>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/javascript.js"></script>
 </body>
 </html>
