@@ -30,9 +30,9 @@
 
 		</select>
 		<h3>ID poziomu:</h3>
-		<input type="text" name="level-id" class="field">
+		<input type="text" name="level-id" class="field" pattern="\d*" title="Cyfry" required>
 		<h3>Nazwa poziomu:</h3>
-		<input type="text" name="level-name" class="field">
+		<input type="text" name="level-name" class="field" pattern="[a-zA-Z]*" title="Litery" required>
 		<br>
 		<input type="submit" id="send" value="Dodaj">
 	</form>

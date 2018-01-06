@@ -36,19 +36,19 @@
             </c:forEach >
         </select>
         <h3>ID pomieszczenia:</h3>
-        <input type="text" name="room-id" class="field">
+        <input type="text" name="room-id" class="field" pattern="\d*" title="Cyfry" required>
         <h3>Nazwa pomieszczenia:</h3>
-        <input type="text" name="room-name" class="field">
+        <input type="text" name="room-name" class="field" pattern="[a-zA-Z]*" title="Litery" required>
         <h3>Dlugosc (x):</h3>
-        <input type="text" name="room-x" class="field">
+        <input type="text" name="room-x" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
         <h3>Szerokosc (y):</h3>
-        <input type="text" name="room-y" class="field">
+        <input type="text" name="room-y" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
         <h3>Wysokosc (z):</h3>
-        <input type="text" name="room-z" class="field">
+        <input type="text" name="room-z" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
         <h3>Liczba zarowek:</h3>
-        <input type="text" name="room-bulb-count" class="field">
+        <input type="text" name="room-bulb-count" class="field" pattern="\d*" title="Cyfry" required>
         <h3>Moc zarowek:</h3>
-        <input type="text" name="room-bulb-power" class="field">
+        <input type="text" name="room-bulb-power" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
         <br>
         <input type="submit" id="send" value="Dodaj">
     </form>
@@ -57,12 +57,11 @@
         int levelId=Integer.parseInt(request.getParameter("level-id"));
         int roomId=Integer.parseInt(request.getParameter("room-id"));
         String roomName=request.getParameter("room-name");
-        // TO DO: zmienic na float
-        int x=Integer.parseInt(request.getParameter("room-x"));
-        int y=Integer.parseInt(request.getParameter("room-y"));
-        int z=Integer.parseInt(request.getParameter("room-z"));
+        float x=Float.parseFloat(request.getParameter("room-x").replace(',','.'));
+        float y=Float.parseFloat(request.getParameter("room-y").replace(',','.'));
+        float z=Float.parseFloat(request.getParameter("room-z").replace(',','.'));
         int bulbCount=Integer.parseInt(request.getParameter("room-bulb-count"));
-        int bulbPower=Integer.parseInt(request.getParameter("room-bulb-power"));
+        float bulbPower=Float.parseFloat(request.getParameter("room-bulb-power").replace(',','.'));
         new Room(roomId, roomName, x, y, z, bulbCount, bulbPower, TextTransformerController.findLevelById(levelId));
         System.out.println("Pomieszczenie wprowadzone poprawnie"); %>
     <h2 id="complete"> Dodano poprawnie </h2>

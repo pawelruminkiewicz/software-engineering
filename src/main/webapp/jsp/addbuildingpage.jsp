@@ -25,9 +25,9 @@
     <h2>DODAWANIE BUDYNKU</h2>
     <form id="myform" method="POST">
         <h3>ID budynku:</h3>
-        <input type="text" name="building-id" class="field">
+        <input type="text" name="building-id" class="field" pattern="\d*" title="Cyfry" required>
         <h3>Nazwa budynku:</h3>
-        <input type="text" name="building-name" class="field">
+        <input type="text" name="building-name" class="field" pattern="[a-zA-Z]*" title="Litery" required>
         <br>
         <input type="submit" id="send" value="Dodaj">
     </form>
