@@ -20,7 +20,7 @@
         <a href="/addlevel" class="button">Add level</a>
         <a href="/addroom" class="button">Add room</a>
     </div>
-    <h2>Adding a building</h2>
+    <h2 id="title">Adding a building</h2>
     <form id="myform" method="POST">
         <h3>Building ID:</h3>
         <input type="text" name="building-id" class="field" pattern="\d*" title="Cyfry" required>

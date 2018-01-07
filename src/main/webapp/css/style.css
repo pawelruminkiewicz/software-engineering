@@ -56,6 +56,7 @@ a, #send {
     font-size: 140%;
     font-family: Trebuchet MS, sans-serif;
 }
+
 .selected {
     border: 4px solid black;
 }
@@ -81,12 +82,14 @@ a, #send {
     border-radius: 8px;
 }
 
+#title {
+    font-size: 30px;
+    margin-left: 5%;
+}
 .div-table {
     display: table;
-    width: auto;
-    border: 3px solid black;
-    border-spacing: 15px;
     margin: auto;
+    border: 3px solid black;
 }
 
 .div-header {
@@ -95,34 +98,38 @@ a, #send {
     width: 300px;
     font-weight: 900;
     color: #ffffff;
-    background: #ea6153;
+    background-color: red;
     font-size: 30px;
+    padding: 6px 12px;
 }
 
 .div-row {
     display: table-row;
     width: 100%;
-    background-color: #f6f6f6;
-}
-
-.div-row:nth-of-type(odd) {
-    background: #e9e9e9;
 }
 
 .div-data{
     float: left;
-    display: table-column;
     width: 300px;
+    padding: 6px 12px;
+    display: table-cell;
 }
 
 .div-building {
     font-size: 30px;
+    background-color: white;
+}
 
+.div-building:nth-of-type(odd) {
+    background-color: #e8e8e9;
 }
 
 .div-level {
     font-size: 25px;
+}
 
+.div-level:hover {
+    background-color: orangered;
 }
 
 .div-room {

@@ -19,7 +19,7 @@
         <a href="/addlevel" class="button">Add level</a>
         <a href="/addroom" class="button selected">Add room</a>
     </div>
-    <h2>Adding a room</h2>
+    <h2 id="title">Adding a room</h2>
     <form id="myform" method="POST">
         <h3>Select level:</h3>
         <select  name="level-id" class="field">
