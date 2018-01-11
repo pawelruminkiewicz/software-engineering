@@ -2,8 +2,15 @@ package pl.put.poznan.transformer.logic;
 
 import java.util.ArrayList;
 
+/**
+ * Class allows to calculate light power of buildings, levels and rooms
+ */
 public class LightingPowerCalculator implements Visitor {
 
+    /**
+     * Overloaded method visit for building objects
+     * @param location building object
+     */
     @Override
     public void visit(Building location) {
         float light;
@@ -17,6 +24,11 @@ public class LightingPowerCalculator implements Visitor {
         light = (sumOfPowers/location.getArea());
         location.setLight(Float.parseFloat((String.format("%.2f",light)).replace(',','.')));
     }
+
+    /**
+     * Overloaded method visit for level objects
+     * @param location level object
+     */
     @Override
     public void visit(Level location) {
         float light;
@@ -29,6 +41,11 @@ public class LightingPowerCalculator implements Visitor {
         location.setLight(Float.parseFloat((String.format("%.2f",light)).replace(',','.')));
     }
 
+
+    /**
+     * Overloaded method visit for room objects
+     * @param location room object
+     */
     @Override
     public void visit(Room location) {
         float light;

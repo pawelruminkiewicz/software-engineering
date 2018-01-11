@@ -2,11 +2,25 @@ package pl.put.poznan.transformer.logic;
 
 import java.util.ArrayList;
 
+/**
+ * Class allows to calculate heating of buildings, levels and rooms
+ */
+
 public class HeatingPowerCalculator implements Visitor {
 
+    /**
+     * This method round the value to two decimal places
+     * @param value
+     * @return rounded value
+     */
     private float convert2f(float value){
         return Float.parseFloat((String.format("%.2f",value)).replace(',','.'));
     }
+
+    /**
+     * Overloaded method visit for building objects
+     * @param location building object
+     */
     @Override
     public void visit(Building location) {
         ArrayList<Level> building = location.getLevels();
@@ -23,6 +37,11 @@ public class HeatingPowerCalculator implements Visitor {
         location.setHeating(heatAvg);
     }
 
+    /**
+     * Overloaded method visit for level objects
+     * @param location level object
+     */
+
     @Override
     public void visit(Level location) {
         ArrayList<Room> level = location.getRooms();
@@ -37,6 +56,10 @@ public class HeatingPowerCalculator implements Visitor {
         location.setHeating(heatAvg);
     }
 
+    /**
+     * Overloaded method visit for room objects
+     * @param location room object
+     */
     @Override
     public void visit(Room location) {
         int heaterCount = location.getHeaterCount();
