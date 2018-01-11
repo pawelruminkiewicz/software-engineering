@@ -40,6 +40,8 @@ public abstract class Location {
         return name;
     }
 
+    public float getHeating() { return heating; }
+
     public int getId() {
         return id;
     }
