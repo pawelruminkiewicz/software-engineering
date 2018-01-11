@@ -6,8 +6,10 @@ public class Room extends Location implements Visitable{
     private float z;
     private int bulbCount;
     private float bulbPower;
+    private int heaterCount;
+    private float heaterPower;
 
-    public Room(int id, String name, float x, float y, float z, int bulbCount, float bulbPower, Level level) {
+    public Room(int id, String name, float x, float y, float z, int bulbCount, float bulbPower, int heaterCount,float heaterPower, Level level) {
         this.id = id;
         this.name = name;
         this.x = x;
@@ -15,6 +17,8 @@ public class Room extends Location implements Visitable{
         this.z = z;
         this.bulbCount = bulbCount;
         this.bulbPower = bulbPower;
+        this.heaterCount = heaterCount;
+        this.heaterPower = heaterPower;
         level.getRooms().add(this);
     }
 
@@ -36,6 +40,14 @@ public class Room extends Location implements Visitable{
 
     public float getBulbPower() {
         return bulbPower;
+    }
+
+    public int getHeaterCount() {
+        return heaterCount;
+    }
+
+    public float getHeaterPower() {
+        return heaterPower;
     }
 
     @Override

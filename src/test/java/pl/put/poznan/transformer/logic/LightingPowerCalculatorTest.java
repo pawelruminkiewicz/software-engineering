@@ -32,10 +32,10 @@ public class LightingPowerCalculatorTest {
         level2 = new Level(2,"pietro 2",building);
         levels.add(level1);
         levels.add(level2);
-        room11 = new Room(1,"biuro",5, 5, 3,5,50,level1);
-        room12 = new Room(2,"kuchnia",6, 6, 3,10,65,level1);
-        room21 = new Room(3,"stolowka",7, 7, 3,5,50,level2);
-        room22 = new Room(4,"biuro",8, 8, 3,7,55,level2);
+        room11 = new Room(1,"biuro",5, 5, 3,5,50,2,250,level1);
+        room12 = new Room(2,"kuchnia",6, 6, 3,10,65,1,325,level1);
+        room21 = new Room(3,"stolowka",7, 7, 3,5,50,2,220,level2);
+        room22 = new Room(4,"biuro",8, 8, 3,7,55,3,150,level2);
         rooms1 = new ArrayList<>();
         rooms2 = new ArrayList<>();
         rooms1.add(room11);
