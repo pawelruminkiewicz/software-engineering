@@ -28,7 +28,7 @@ public class HeatingPowerCalculatorTest {
     public void setUp() throws Exception {
         heatCalc = new HeatingPowerCalculator();
         cubeCalc = new CubeCalculator();
-        building = new Building(1,"Gazownia");
+        building = new Building(1,"Gazownia",3);
         levels = new ArrayList<>();
         level1 = new Level(1,"pietro 1",building);
         level2 = new Level(2,"pietro 2",building);

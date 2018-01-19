@@ -8,6 +8,7 @@ public class Room extends Location implements Visitable{
     private float bulbPower;
     private int heaterCount;
     private float heaterPower;
+    private boolean isAlerted;
 
     public Room(int id, String name, float x, float y, float z, int bulbCount, float bulbPower, int heaterCount,float heaterPower, Level level) {
         this.id = id;
@@ -20,6 +21,7 @@ public class Room extends Location implements Visitable{
         this.heaterCount = heaterCount;
         this.heaterPower = heaterPower;
         level.getRooms().add(this);
+        isAlerted = false;
     }
 
     public float getX() {
@@ -48,6 +50,14 @@ public class Room extends Location implements Visitable{
 
     public float getHeaterPower() {
         return heaterPower;
+    }
+
+    public boolean isAlerted() {
+        return isAlerted;
+    }
+
+    public void setAlerted(boolean alerted) {
+        isAlerted = alerted;
     }
 
     @Override

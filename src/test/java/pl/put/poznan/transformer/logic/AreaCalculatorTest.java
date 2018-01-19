@@ -23,7 +23,7 @@ public class AreaCalculatorTest {
     public void setUp() throws Exception {
         areaCalculator = new AreaCalculator();
 
-        building = new Building(1, "Gazownia");
+        building = new Building(1, "Gazownia",3);
 
         level1 = new Level(1, "pietro 1", building);
         level2 = new Level(2, "pietro 2", building);
