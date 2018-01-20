@@ -33,7 +33,7 @@
     <% if (request.getParameter("building-name") != null){
         String buildingName=request.getParameter("building-name");
         int buildingId=Integer.parseInt(request.getParameter("building-id"));
-        TextTransformerApplication.addToMyList(new Building(buildingId, buildingName));
+        TextTransformerApplication.addToMyList(new Building(buildingId, buildingName,8));
         System.out.println("Building inserted correctly"); %>
     <h2 id="complete"> Added correctly </h2>
     <%} %>

@@ -58,9 +58,11 @@ public class TextTransformerApplication {
         AreaCalculator areaCalculator = new AreaCalculator();
         CubeCalculator cubeCalculator = new CubeCalculator();
         LightingPowerCalculator lightingCalculator = new LightingPowerCalculator();
+        HeatingPowerCalculator heatingCalculator = new HeatingPowerCalculator();
         myLocation.accept(areaCalculator);
         myLocation.accept(cubeCalculator);
         myLocation.accept(lightingCalculator);
+        myLocation.accept(heatingCalculator);
     }
 
 

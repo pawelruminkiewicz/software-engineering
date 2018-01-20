@@ -45,6 +45,10 @@
         <input type="text" name="room-bulb-count" class="field" pattern="\d*" title="Cyfry" required>
         <h3>Bulb power:</h3>
         <input type="text" name="room-bulb-power" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
+        <h3>Heater count:</h3>
+        <input type="text" name="room-heater-count" class="field" pattern="\d*" title="Cyfry" required>
+        <h3>Heater power:</h3>
+        <input type="text" name="room-heater-power" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
         <br>
         <input type="submit" id="send" value="Add">
     </form>
@@ -58,8 +62,10 @@
         float z=Float.parseFloat(request.getParameter("room-z").replace(',','.'));
         int bulbCount=Integer.parseInt(request.getParameter("room-bulb-count"));
         float bulbPower=Float.parseFloat(request.getParameter("room-bulb-power").replace(',','.'));
+        int heaterCount=Integer.parseInt(request.getParameter("room-heater-count"));
+        float heaterPower=Float.parseFloat(request.getParameter("room-heater-power").replace(',','.'));
         Level myLevel = TextTransformerApplication.findLevelById(levelId);
-        Room myRoom = new Room(roomId, roomName, x, y, z, bulbCount, bulbPower, myLevel);
+        Room myRoom = new Room(roomId, roomName, x, y, z, bulbCount, bulbPower, heaterCount, heaterPower, myLevel);
         Building myBuilding = TextTransformerApplication.findBuildingByLevelId(myLevel.getId());
         TextTransformerApplication.calculateAllAttributes(myRoom);
         TextTransformerApplication.calculateAllAttributes(myLevel);
