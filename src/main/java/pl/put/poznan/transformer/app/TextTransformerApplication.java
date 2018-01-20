@@ -67,25 +67,25 @@ public class TextTransformerApplication {
 
 
     static {
-        Building myBuilding = new Building(1, "White House",3);
+        Building myBuilding = new Building(1, "White House",10);
         Level myLevel = new Level(3, "First Level", myBuilding);
         Room myRoom = new Room(4, "First Room", 4, 5, 3,4,200,2,250, myLevel);
         Room myRoom2 = new Room(5, "Second Room", 2, 3, 3,8,300,1,400, myLevel);
         myBuildings.add(myBuilding);
 
-        myBuilding = new Building(10, "Black House",3);
+        myBuilding = new Building(10, "Black House",5);
         myLevel = new Level(11, "First Level", myBuilding);
         myRoom = new Room(12, "Kitchen", 4, 9, 2.7f,4,200,2,300, myLevel);
         myRoom2 = new Room(13, "Garage", 22, 6, 2.4f,5,90.5f,3,150, myLevel);
         myBuildings.add(myBuilding);
 
-        myBuilding = new Building(21, "Orange House",3);
+        myBuilding = new Building(21, "Orange House",20);
         myLevel = new Level(22, "First Level", myBuilding);
         myRoom = new Room(23, "Toilet1", 2, 3, 2.6f,1,90,2,250, myLevel);
         myRoom2 = new Room(24, "Toilet2", 3, 3, 2.8f,3,90,1,400, myLevel);
         myBuildings.add(myBuilding);
 
-        myBuilding = new Building(35, "Green House",3);
+        myBuilding = new Building(35, "Green House",10);
         myLevel = new Level(36, "First Level", myBuilding);
         myRoom = new Room(37, "First Corridor", 20, 3, 3,15,200,1,325, myLevel);
         myRoom2 = new Room(38, "First Garage", 5, 6, 2,5,300,3,100, myLevel);

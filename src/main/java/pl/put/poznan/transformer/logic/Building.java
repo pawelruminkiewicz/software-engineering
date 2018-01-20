@@ -35,7 +35,7 @@ public class Building extends Location implements Visitable{
     }
 
     public float getAlertPoint() {
-        return alertPoint;
+        return (Float.parseFloat((String.format("%.2f", alertPoint)).replace(',','.')));
     }
 
     public void setAlertPoint(float alertPoint) {

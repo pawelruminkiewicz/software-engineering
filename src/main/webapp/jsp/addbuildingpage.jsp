@@ -26,6 +26,8 @@
         <input type="text" name="building-id" class="field" pattern="\d*" title="Cyfry" required>
         <h3>Building name:</h3>
         <input type="text" name="building-name" class="field" pattern="[a-zA-Z\s]*" title="Litery" required>
+        <h3>Alert value:</h3>
+        <input type="text" name="building-alert-point" class="field" pattern="[0-9]+([\.,][0-9]+)?" title="Liczba dziesietna" required>
         <br>
         <input type="submit" id="send" value="Add">
     </form>
@@ -33,7 +35,8 @@
     <% if (request.getParameter("building-name") != null){
         String buildingName=request.getParameter("building-name");
         int buildingId=Integer.parseInt(request.getParameter("building-id"));
-        TextTransformerApplication.addToMyList(new Building(buildingId, buildingName,8));
+        float buildingAlertPoint=Float.parseFloat(request.getParameter("building-alert-point").replace(',','.'));
+        TextTransformerApplication.addToMyList(new Building(buildingId, buildingName, buildingAlertPoint));
         System.out.println("Building inserted correctly"); %>
     <h2 id="complete"> Added correctly </h2>
     <%} %>

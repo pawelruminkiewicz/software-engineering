@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!doctype html>
 
@@ -26,11 +27,15 @@
 			<div class="div-header">Heating</div>
 		</div>
 		<c:forEach items="${myBuildingList}" var="building">
-			<div class="div-building"> <div class="div-row"> <div class="div-data">#${building.getId()} ${building.getName()} </div> <div class="div-data"> ${building.getArea()} </div> <div class="div-data"> ${building.getCube()} </div> <div class="div-data"> ${building.getLight()}</div> <div class="div-data"> ${building.getHeating()}</div> </div>
+			<div class="div-building"> <div class="div-row"> <div class="div-data">#${building.getId()} ${building.getName()} </div> <div class="div-data"> ${building.getArea()} </div> <div class="div-data"> ${building.getCube()} </div> <div class="div-data"> ${building.getLight()}</div> <div class="div-data"> ${building.getHeating()} </div> </div>
 				<c:forEach items="${building.getLevels()}" var="level">
 					<div class="div-level"> <div class="div-row"> <div class="div-data"> #${level.getId()} ${level.getName()} </div> <div class="div-data"> ${level.getArea()} </div> <div class="div-data"> ${level.getCube()} </div> <div class="div-data"> ${level.getLight()}</div> <div class="div-data"> ${level.getHeating()}</div> </div>
 						<c:forEach items="${level.getRooms()}" var="room">
-							<div class="div-room"> <div class="div-row"> <div class="div-data">#${room.getId()} ${room.getName()} </div> <div class="div-data"> ${room.getArea()} </div> <div class="div-data"> ${room.getCube()} </div> <div class="div-data"> ${room.getLight()}</div> <div class="div-data"> ${room.getHeating()}</div> </div> </div>
+							<div class="div-room"> <div class="div-row"> <div class="div-data">#${room.getId()} ${room.getName()} </div> <div class="div-data"> ${room.getArea()} </div> <div class="div-data"> ${room.getCube()} </div> <div class="div-data"> ${room.getLight()}</div> <div class="div-data"> ${room.getHeating()}
+								<c:if test="${room.getHeating() > building.getAlertPoint()}">
+									<img src="alert-icon.png" title="+<fmt:formatNumber type = "number" maxFractionDigits = "2" value = "${room.getHeating() - building.getAlertPoint()}" />">
+								</c:if> </div> </div> </div>
+
 						</c:forEach >
 					</div>
 				</c:forEach >
