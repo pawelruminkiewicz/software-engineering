@@ -2,6 +2,7 @@ package pl.put.poznan.transformer.rest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
 import pl.put.poznan.transformer.logic.*;
 import pl.put.poznan.transformer.app.*;
 import org.springframework.stereotype.Controller;
@@ -103,8 +104,19 @@ public class TextTransformerController {
         TextTransformer transformer = new TextTransformer(transforms);
         return transformer.transform(text);
     }
-    */
 
+
+    */
+    @ResponseBody
+    @RequestMapping(value = "/area/{idNumber}", method = RequestMethod.GET, produces = "application/json")
+    public String getLevelArea(@PathVariable("idNumber") Integer id) {
+        // log the parameters
+        logger.debug("GET room id=" + id.toString());
+        Level level = TextTransformerApplication.findLevelById(id);
+        AreaCalculator areaCalculator = new AreaCalculator();
+        level.accept(areaCalculator);
+        return String.format(new Float(level.getArea()).toString());
+    }
 
 }
 
