@@ -23,6 +23,18 @@ public class TextTransformerApplication {
         myBuildings.add(myBuilding);
     }
 
+    public static Room findRoomById(int id) {
+        for(Building buildingItem : myBuildings) {
+            for(Level levelItem : buildingItem.getLevels()) {
+                for(Room roomItem: levelItem.getRooms()) {
+                    if (roomItem.getId() == id) {
+                        return roomItem;
+                    }
+                }
+            }
+        }
+        return null;
+    }
     public static Building findBuildingById(int id) {
         for(int i = 0; i < myBuildings.size(); i++) {
             if (myBuildings.get(i).getId() == id) {
