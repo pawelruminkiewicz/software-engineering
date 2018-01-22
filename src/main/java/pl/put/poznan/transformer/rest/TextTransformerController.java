@@ -249,7 +249,7 @@ public class TextTransformerController {
     @RequestMapping(value = "room/{idNumber}", method = RequestMethod.GET, produces = "application/json")
     public Room getRoom(@PathVariable("idNumber") Integer id) {
         // log the parameters
-        logger.debug("GET room id=" + id.toString());
+        logger.info("GET room id=" + id.toString());
         return TextTransformerApplication.findRoomById(id);
     }
 
@@ -257,7 +257,7 @@ public class TextTransformerController {
     @RequestMapping(value = "level/{idNumber}", method = RequestMethod.GET, produces = "application/json")
     public Level getLevel(@PathVariable("idNumber") Integer id) {
         // log the parameters
-        logger.debug("GET level id=" + id.toString());
+        logger.info("GET level id=" + id.toString());
         return TextTransformerApplication.findLevelById(id);
     }
 
@@ -265,7 +265,7 @@ public class TextTransformerController {
     @RequestMapping(value = "building/{idNumber}", method = RequestMethod.GET, produces = "application/json")
     public Building getBuilding(@PathVariable("idNumber") Integer id) {
         // log the parameters
-        logger.debug("GET building id=" + id.toString());
+        logger.info("GET building id=" + id.toString());
         return myBuildings.get(id);
     }
 
@@ -273,7 +273,7 @@ public class TextTransformerController {
     @RequestMapping(value = "all", method = RequestMethod.GET, produces = "application/json")
     public ArrayList<Building> getAll() {
         // log the parameters
-        logger.debug("GET all");
+        logger.info("GET all");
         return myBuildings;
     }
 }
